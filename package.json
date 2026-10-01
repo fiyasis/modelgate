@@ -1,7 +1,7 @@
 {
   "name": "modelgate",
-  "version": "0.1.0",
-  "description": "Zero-dependency AI model failover router — OpenAI-compatible endpoint that auto-falls through providers/models when one is denied, down, or rate-limited.",
+  "version": "0.2.0",
+  "description": "The 300-line AI gateway: OpenAI + Anthropic compatible endpoint with auto-failover, circuit breakers, cost tracking and live dashboard. Zero dependencies.",
   "type": "commonjs",
   "bin": {
     "modelgate": "index.js"
@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js start",
-    "check": "node index.js models"
+    "check": "node index.js models",
+    "test": "node --test test/"
   },
   "engines": {
     "node": ">=18"

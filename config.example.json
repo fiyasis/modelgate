@@ -2,18 +2,36 @@
   "port": 8787,
   "timeoutMs": 60000,
   "retries": 1,
+  "backoffMs": 500,
+  "breaker": { "failures": 3, "cooldownMs": 30000 },
+  "aliases": {
+    "fast": ["openrouter/nemotron-nano"],
+    "smart": ["openrouter/auto", "openrouter/nemotron-nano"]
+  },
+  "pricing": {
+    "openrouter/auto": { "input": 0.0005, "output": 0.0015 },
+    "openrouter/nemotron-nano": { "input": 0.0002, "output": 0.0006 }
+  },
   "providers": [
     {
-      "name": "example-primary",
-      "baseURL": "https://api.example.com/v1",
-      "apiKey": "sk-your-key-here",
-      "models": ["model-name-1", "model-name-2"]
+      "name": "openrouter",
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKey": "sk-or-your-key-here",
+      "protocol": "openai",
+      "models": ["openrouter/auto", "nemotron-nano", "gpt-4o-mini"]
     },
     {
-      "name": "example-fallback",
-      "baseURL": "https://fallback.example.com/v1",
-      "apiKey": "sk-your-fallback-key-here",
-      "models": ["fallback-model"]
+      "name": "anthropic-direct",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "sk-ant-your-key-here",
+      "protocol": "anthropic",
+      "models": ["claude-sonnet-4-20250514", "claude-haiku-4-20250514"]
+    },
+    {
+      "name": "local-ollama",
+      "baseURL": "http://127.0.0.1:11434/v1",
+      "protocol": "openai",
+      "models": ["llama3.2", "qwen2.5"]
     }
   ]
 }
