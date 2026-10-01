@@ -1,0 +1,19 @@
+{
+  "port": 8787,
+  "timeoutMs": 60000,
+  "retries": 1,
+  "providers": [
+    {
+      "name": "example-primary",
+      "baseURL": "https://api.example.com/v1",
+      "apiKey": "sk-your-key-here",
+      "models": ["model-name-1", "model-name-2"]
+    },
+    {
+      "name": "example-fallback",
+      "baseURL": "https://fallback.example.com/v1",
+      "apiKey": "sk-your-fallback-key-here",
+      "models": ["fallback-model"]
+    }
+  ]
+}

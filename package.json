@@ -1,0 +1,26 @@
+{
+  "name": "modelgate",
+  "version": "0.1.0",
+  "description": "Zero-dependency AI model failover router — OpenAI-compatible endpoint that auto-falls through providers/models when one is denied, down, or rate-limited.",
+  "type": "commonjs",
+  "bin": {
+    "modelgate": "index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js start",
+    "check": "node index.js models"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "llm",
+    "failover",
+    "router",
+    "openai-compatible",
+    "gateway"
+  ]
+}
